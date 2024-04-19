@@ -47,13 +47,13 @@ public class Main {
             System.out.println("Welcome to THE Mars Hall Library!\n");
             System.out.println("Home Menu");
                 // Option: Show Available books
-            System.out.println("\tEnter 1 to show available books.");
+            System.out.println("\tEnter 1 to for Available Books menu.");
                 // Option: Show Checked Out books
-            System.out.println("\tEnter 2 to show checked out books.");
+            System.out.println("\tEnter 2 to for Checked Out Books menu.");
                 // Else Exit
             System.out.println("\tEnter 3 to Exit.\n");
 
-            System.out.println("Enter your selection here: ");
+            System.out.println("Enter Menu selection here: ");
             homeSelection = scanner.nextInt();
 
             switch (homeSelection) {
@@ -64,24 +64,28 @@ public class Main {
                         System.out.println("Available Books menu\n");
 
                         // Show Available books
+                        int numOfAvBooks = 0;
                         for (Book book : bookInventory) {
                             if (!book.isCheckedOut()) {
                                 System.out.println("\"" + book.getTitle() + "\"");
                                 System.out.println("ISBN: " + book.getIsbn());
                                 System.out.println("ID: " + book.getId());
                                 System.out.println();
+                                ++numOfAvBooks;
                             } else {
                                 // Intentionally left blank
                             }
                         }
 
+                        System.out.println("\n# of Available books: " + numOfAvBooks + "\n");
+
                         // Ask user if they want to check out book(s)
-                        System.out.println("Would you like to check out a book?");
+                        System.out.println("Would you like to CHECK OUT a book?");
                             // Option: If Yes:
                         System.out.println("\tIf Yes, type 1");
                             // Else Exit/go back
                         System.out.println("\tIf No, type 2 to go BACK\n");
-                        System.out.println("Enter selection here: ");
+                        System.out.println("Enter here: ");
 
                         avBksSelection = scanner.nextInt();
                         int iDToCheckOut;
@@ -101,7 +105,7 @@ public class Main {
                                         book.setCheckedOutTo(userName);
 
                                         ckdOutBook = book.getTitle();
-                                        System.out.println("You checked out " + "\"" + ckdOutBook + "\""); // Prints book title that's been checked out
+                                        System.out.println("You CHECKED OUT " + "\"" + ckdOutBook + "\""); // Prints book title that's been checked out
                                     }
                                     else {
                                         // Intentionally left blank
@@ -135,21 +139,86 @@ public class Main {
                     break;
 
                 case 2:
-                    System.out.println("Checked-Out Books\n");
 
-                    /*int ckdOutBksSelection;
+                    String ckdOutBksSelection;
                     do {
+                        System.out.println("Checked-Out Books menu\n");
                         // Show Checked Out books
-                        // Displays book info + user's name that checked out
+                        int numOfCkdOutBooks = 0;
+                        for (Book book : bookInventory) {
+                            if (book.isCheckedOut()) {
+                                System.out.println("\"" + book.getTitle() + "\"");
+                                System.out.println("ISBN: " + book.getIsbn());
+                                System.out.println("ID: " + book.getId());
+                                System.out.println("\tChecked Out by " + book.getCheckedOutTo());
+                                System.out.println();
+                                ++numOfCkdOutBooks;
+                            } else {
+                                // Intentionally left blank
+                            }
+                        }
+
+                        System.out.println("\n# of Checked-Out books: " + numOfCkdOutBooks + "\n");
+
+                        System.out.println("Would you like to CHECK IN a book?");
+                        // Option: If Yes:
+                        System.out.println("\tType C to check in");
+                        // Else Exit/go back
+                        System.out.println("\tType X to go BACK to Home menu\n");
+                        System.out.println("Enter here: ");
+                        ckdOutBksSelection = scanner.next();
                             // Option: (C)heck-in book
                                 // Ask for book ID to check in
                                     // Check-in book with ID
                                         // Exit/return/go back to Home
                             // Else Exit/go back
 
+                        int iDToCheckIn;
+                        // Using "toUpperCase()" so that any input will be upper-case; making the switch statement "ignore" the casing.
+                        switch (ckdOutBksSelection.toUpperCase()) {
+                            case "C":
+                                // Ask for book ID to check in
+                                System.out.println("What is the ID# of the book you wish to CHECK IN? ");
+                                iDToCheckIn = scanner.nextInt(); // This only accepts ONE book to check out.
 
+                                String ckdInBook; // Book title that's being Checked-in
+                                for (Book book : bookInventory) {
+                                    if (book.getId() == iDToCheckIn) {
+                                        book.setCheckedOut(false);
+                                        book.setCheckedOutTo("");
 
-                    } while (ckdOutBksSelection != 2);*/
+                                        ckdInBook = book.getTitle();
+                                        System.out.println("You CHECKED IN " + "\"" + ckdInBook + "\""); // Prints book title that's been checked IN
+                                    }
+                                    else {
+                                        // Intentionally left blank
+                                    }
+                                }
+
+                                // Put this here so that it won't automatically go back to the Checked-Out Books menu after checking out.
+                                /*int exitNum;
+                                do {
+                                    System.out.println(
+                                            "Type 1 to Exit to Checked-Out Books menu\n"
+                                                    + "Enter here: ");
+                                    exitNum = scanner.nextInt();
+                                    if (exitNum == 1) {
+                                        break;
+                                    } else {
+                                        System.out.println("\nERROR: Must type 1 to Exit.\n");
+                                    }
+                                } while (exitNum != 1);*/
+
+                                System.out.println("Returning to Checked-Out Books Menu ...\n");
+                                break;
+                            case "X":
+                                System.out.println("Returning to Home Menu ...\n");
+                                break;
+                            default:
+                                System.out.println("ERROR: type either C or X");
+                                break;
+                        }
+                    } while (!ckdOutBksSelection.equalsIgnoreCase("X"));
                     break;
 
                 case 3:
