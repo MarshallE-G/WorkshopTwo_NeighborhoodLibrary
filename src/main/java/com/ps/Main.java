@@ -41,9 +41,7 @@ public class Main {
                book13, book14, book15, book16, book17, book18, book19, book20};
 
 
-
-
-        /*int homeSelection;
+        int homeSelection;
         do {
             // Store Home Screen
             System.out.println("Welcome to THE Mars Hall Library!");
@@ -64,8 +62,15 @@ public class Main {
                     int aBSelection;
                     do {
                         // Show Available books
-                        for () {
-
+                        for (int i = 0; i < bookInventory.length; i++) {
+                            if (bookInventory[i].isCheckedOut() == false) {
+                                System.out.println("\"" + bookInventory[i].getTitle() + "\"");
+                                System.out.println("ISBN: " + bookInventory[i].getIsbn());
+                                System.out.println("ID: " + bookInventory[i].getId());
+                            }
+                            else {
+                                break;
+                            }
                         }
                         // Displays book info
                             // Ask user if they want to check out book(s)
@@ -104,7 +109,7 @@ public class Main {
             }
 
 
-        } while (homeSelection != 3);*/
+        } while (homeSelection != 3);
 
 
 
