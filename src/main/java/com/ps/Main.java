@@ -10,11 +10,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        /*String[] bookInventory = {"Frankenstein", "The Giving Tree", "To Kill a Mockingbird", "The Alchemist",
-                "The Three-Body Problem", "Dune", "Harry Potter", "Percy Jackson And the Olympians", "Magnus Chase",
-                "Maximum Ride", "Nancy Drew", "Sherlock Holmes", "Dr. Jekyll and Mr. Hyde", "Divine Comedy",
-                "Faust", "Little Women", "Book of Five Rings", "Summoner", "The Kane Chronicles",
-                "The Blood of Olympus"};*/
 
         Book book1 = new Book(1110, "01", "Frankenstein");
         Book book2 = new Book(1111, "02", "The Giving Tree");
