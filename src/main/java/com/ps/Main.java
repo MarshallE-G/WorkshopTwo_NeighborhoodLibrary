@@ -1,15 +1,106 @@
 package com.ps;
 
+// BONUS 1: Move Do-whiles/Menu to their own separate classes.
+// BONUS 2: Maybe add an Error message once all books are checked out.
+    // Or display the number of books available & checked out.
+
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String[] bookInventory = {"Frankenstein", "The Giving Tree", "To Kill a Mockingbird", "The Alchemist",
+                "The Three-Body Problem", "Dune", "Harry Potter", "Percy Jackson And the Olympians", "Magnus Chase",
+                "Maximum Ride", "Nancy Drew", "Sherlock Holmes", "Dr. Jekyll and Mr. Hyde", "Divine Comedy",
+                "Faust", "Little Women", "Book of Five Rings", "Summoner", "The Kane Chronicles",
+                "The Blood of Olympus"};
 
-        // Store Home Screen
+        Book book1 = new Book("1", "1110", "Frankenstein");
+        Book book2 = new Book("2", "1111", "The Giving Tree");
+        Book book3 = new Book("3", "1112", "To Kill a Mockingbird");
+        Book book4 = new Book("4", "1113", "The Alchemist");
+        Book book5 = new Book("5", "1114", "The Three-Body Problem");
+        Book book6 = new Book("6", "1115", "Dune");
+        Book book7 = new Book("7", "1116", "Harry Potter");
+        Book book8 = new Book("8", "1117", "Percy Jackson And the Olympians");
+        Book book9 = new Book("9", "1118", "Magnus Chase");
+        Book book10 = new Book("10", "1119", "Maximum Ride");
+        Book book11 = new Book("11", "1120", "Nancy Drew");
+        Book book12 = new Book("12", "1121", "Sherlock Holmes");
+        Book book13 = new Book("13", "1122", "Dr. Jekyll and Mr. Hyde");
+        Book book14 = new Book("14", "1123", "Divine Comedy");
+        Book book15 = new Book("15", 1124, "Faust");
+        Book book16 = new Book("16", 1125, "Little Women");
+        Book book17 = new Book("17", 1126, "Book of Five Rings");
+        Book book18 = new Book("18", 1127, "Summoner");
+        Book book19 = new Book("19", 1128, "The Kane Chronicles");
+        Book book20 = new Book("20", 1129, "The Blood of Olympus");
 
-            // Show Available books
 
-            // Show Checked Out books
+        int homeSelection;
+        do {
+            // Store Home Screen
+            System.out.println("Welcome to THE Mars Hall Library!");
+                // Option: Show Available books
+            System.out.println("\tEnter 1 to show available books.");
+                // Option: Show Checked Out books
+            System.out.println("\tEnter 2 to show checked out books.");
+                // Else Exit
+            System.out.println("\tEnter 3 to Exit.\n");
 
-                // Check-in book
+            System.out.println("Enter your selection here: ");
+            homeSelection = scanner.nextInt();
+
+            switch (homeSelection) {
+                case 1:
+                    System.out.println("Available books");
+
+                    int aBSelection;
+                    do {
+                        // Show Available books
+                        for () {
+
+                        }
+                        // Displays book info
+                            // Ask user if they want to check out book(s)
+                                // Ask for user's name
+                                    // Then: check out
+                            // Else Exit/go back
+
+
+
+
+                    } while ();
+                    break;
+                case 2:
+                    System.out.println("Checked-out books");
+
+                    int cOBSelection;
+                    do {
+                        // Show Checked Out books
+                        // Displays book info + user's name that checked out
+                            // Option: (C)heck-in book
+                                // Ask for book ID to check in
+                                    // Check-in book with ID
+                                        // Exit/return/go back to Home
+                        // Else Exit/go back
+
+
+
+                    } while ();
+                    break;
+                case 3:
+                    break;
+                default:
+
+
+
+            }
+
+
+        } while (homeSelection != 3);
+
 
 
 
