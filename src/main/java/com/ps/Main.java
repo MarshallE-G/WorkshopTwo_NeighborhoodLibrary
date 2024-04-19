@@ -40,7 +40,7 @@ public class Main {
         Book[] bookInventory = {book1, book2, book3, book4, book5, book6, book7, book8, book9, book10, book11, book12,
                book13, book14, book15, book16, book17, book18, book19, book20};
 
-
+        String userName;
         int homeSelection;
         do {
             // Store Home Screen
@@ -62,31 +62,64 @@ public class Main {
                     int aBSelection;
                     do {
                         // Show Available books
-                        for (int i = 0; i < bookInventory.length; i++) {
-                            if (bookInventory[i].isCheckedOut() == false) {
-                                System.out.println("\"" + bookInventory[i].getTitle() + "\"");
-                                System.out.println("ISBN: " + bookInventory[i].getIsbn());
-                                System.out.println("ID: " + bookInventory[i].getId());
-                            }
-                            else {
-                                break;
+                        for (Book book : bookInventory) {
+                            if (!book.isCheckedOut()) {
+                                System.out.println("\"" + book.getTitle() + "\"");
+                                System.out.println("ISBN: " + book.getIsbn());
+                                System.out.println("ID: " + book.getId());
+                                System.out.println();
+                            } else {
+                                // Intentionally left blank
                             }
                         }
-                        // Displays book info
-                            // Ask user if they want to check out book(s)
+
+                        // Option: Ask user if they want to check out book(s)
+                        System.out.println("Would you like to check out a book?");
+                        // If Yes:
+                        System.out.println("\tIf Yes, type 1");
+                        // Else Exit/go back
+                        System.out.println("\tIf No, type 2 to EXIT\n");
+                        System.out.println("Enter selection here: ");
+
+                        aBSelection = scanner.nextInt();
+                        int iDToCheckOut;
+                        switch (aBSelection) {
+                            case 1:
                                 // Ask for user's name
+                                System.out.println("What is your name?");
+                                userName = scanner.nextLine();
+
                                     // Then: check out
-                            // Else Exit/go back
+                                        // Ask what book IDs to check out
+                                        // Get variable name from ID
+                                System.out.println("Enter ID of book you would like to CHECK OUT: ");
+                                iDToCheckOut = scanner.nextInt();
 
+                                for (Book book : bookInventory) {
+                                    if (book.getId() == iDToCheckOut) {
+                                        book.setCheckedOut(true);
+                                        book.setCheckedOutTo(userName);
+                                    }
+                                    else {
+                                        // Intentionally left blank
+                                    }
+                                }
 
-
-
-                    } while ();
+                                break;
+                            case 2:
+                                System.out.println("Returning to Home Menu ...");
+                                break;
+                            default:
+                                System.out.println("ERROR: type either 1 or 2.");
+                                break;
+                        }
+                    } while (aBSelection != 2);
                     break;
+
                 case 2:
                     System.out.println("Checked-out books");
 
-                    int cOBSelection;
+                    /*int cOBSelection;
                     do {
                         // Show Checked Out books
                         // Displays book info + user's name that checked out
@@ -94,17 +127,16 @@ public class Main {
                                 // Ask for book ID to check in
                                     // Check-in book with ID
                                         // Exit/return/go back to Home
-                        // Else Exit/go back
+                            // Else Exit/go back
 
 
 
-                    } while ();
+                    } while (cOBSelection != 2);*/
                     break;
+
                 case 3:
                     break;
                 default:
-
-
 
             }
 
