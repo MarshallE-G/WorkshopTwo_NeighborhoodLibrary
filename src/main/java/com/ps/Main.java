@@ -16,26 +16,26 @@ public class Main {
                 "Faust", "Little Women", "Book of Five Rings", "Summoner", "The Kane Chronicles",
                 "The Blood of Olympus"};
 
-        Book book1 = new Book("1", "1110", "Frankenstein");
-        Book book2 = new Book("2", "1111", "The Giving Tree");
-        Book book3 = new Book("3", "1112", "To Kill a Mockingbird");
-        Book book4 = new Book("4", "1113", "The Alchemist");
-        Book book5 = new Book("5", "1114", "The Three-Body Problem");
-        Book book6 = new Book("6", "1115", "Dune");
-        Book book7 = new Book("7", "1116", "Harry Potter");
-        Book book8 = new Book("8", "1117", "Percy Jackson And the Olympians");
-        Book book9 = new Book("9", "1118", "Magnus Chase");
-        Book book10 = new Book("10", "1119", "Maximum Ride");
-        Book book11 = new Book("11", "1120", "Nancy Drew");
-        Book book12 = new Book("12", "1121", "Sherlock Holmes");
-        Book book13 = new Book("13", "1122", "Dr. Jekyll and Mr. Hyde");
-        Book book14 = new Book("14", "1123", "Divine Comedy");
-        Book book15 = new Book("15", 1124, "Faust");
-        Book book16 = new Book("16", 1125, "Little Women");
-        Book book17 = new Book("17", 1126, "Book of Five Rings");
-        Book book18 = new Book("18", 1127, "Summoner");
-        Book book19 = new Book("19", 1128, "The Kane Chronicles");
-        Book book20 = new Book("20", 1129, "The Blood of Olympus");
+        Book book1 = new Book(1110, "01", "Frankenstein");
+        Book book2 = new Book(1111, "02", "The Giving Tree");
+        Book book3 = new Book(1112, "03", "To Kill a Mockingbird");
+        Book book4 = new Book(1113, "04", "The Alchemist");
+        Book book5 = new Book(1114, "05", "The Three-Body Problem");
+        Book book6 = new Book(1115, "06", "Dune");
+        Book book7 = new Book(1116, "07", "Harry Potter");
+        Book book8 = new Book(1117, "08", "Percy Jackson And the Olympians");
+        Book book9 = new Book(1118, "09", "Magnus Chase");
+        Book book10 = new Book(1119, "10", "Maximum Ride");
+        Book book11 = new Book(1120, "11", "Nancy Drew");
+        Book book12 = new Book(1121, "12", "Sherlock Holmes");
+        Book book13 = new Book(1122, "13", "Dr. Jekyll and Mr. Hyde");
+        Book book14 = new Book(1123, "14", "Divine Comedy");
+        Book book15 = new Book(1124, "15", "Faust");
+        Book book16 = new Book(1125, "16", "Little Women");
+        Book book17 = new Book(1126, "17", "Book of Five Rings");
+        Book book18 = new Book(1127, "18", "Summoner");
+        Book book19 = new Book(1128, "19", "The Kane Chronicles");
+        Book book20 = new Book(1129, "20", "The Blood of Olympus");
 
 
         int homeSelection;
