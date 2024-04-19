@@ -10,11 +10,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String[] bookInventory = {"Frankenstein", "The Giving Tree", "To Kill a Mockingbird", "The Alchemist",
+        /*String[] bookInventory = {"Frankenstein", "The Giving Tree", "To Kill a Mockingbird", "The Alchemist",
                 "The Three-Body Problem", "Dune", "Harry Potter", "Percy Jackson And the Olympians", "Magnus Chase",
                 "Maximum Ride", "Nancy Drew", "Sherlock Holmes", "Dr. Jekyll and Mr. Hyde", "Divine Comedy",
                 "Faust", "Little Women", "Book of Five Rings", "Summoner", "The Kane Chronicles",
-                "The Blood of Olympus"};
+                "The Blood of Olympus"};*/
 
         Book book1 = new Book(1110, "01", "Frankenstein");
         Book book2 = new Book(1111, "02", "The Giving Tree");
@@ -37,8 +37,13 @@ public class Main {
         Book book19 = new Book(1128, "19", "The Kane Chronicles");
         Book book20 = new Book(1129, "20", "The Blood of Olympus");
 
+        Book[] bookInventory = {book1, book2, book3, book4, book5, book6, book7, book8, book9, book10, book11, book12,
+               book13, book14, book15, book16, book17, book18, book19, book20};
 
-        int homeSelection;
+
+
+
+        /*int homeSelection;
         do {
             // Store Home Screen
             System.out.println("Welcome to THE Mars Hall Library!");
@@ -99,7 +104,7 @@ public class Main {
             }
 
 
-        } while (homeSelection != 3);
+        } while (homeSelection != 3);*/
 
 
 
