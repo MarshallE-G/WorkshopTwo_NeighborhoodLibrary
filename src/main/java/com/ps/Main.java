@@ -36,7 +36,7 @@ public class Main {
                book13, book14, book15, book16, book17, book18, book19, book20};
 
         String userName;
-        int homeSelection;
+        String homeSelection;
         do {
             // Store Home Screen
             System.out.println("Welcome to THE Mars Hall Library!\n");
@@ -49,12 +49,12 @@ public class Main {
             System.out.println("\tEnter 3 to Exit.\n");
 
             System.out.println("Enter Menu selection here: ");
-            homeSelection = scanner.nextInt();
+            homeSelection = scanner.next();
 
             switch (homeSelection) {
-                case 1:
+                case "1":
 
-                    int avBksSelection;
+                    String avBksSelection;
                     do {
                         System.out.println("Available Books menu\n");
 
@@ -82,10 +82,10 @@ public class Main {
                         System.out.println("\tIf No, type 2 to go BACK\n");
                         System.out.println("Enter here: ");
 
-                        avBksSelection = scanner.nextInt();
+                        avBksSelection = scanner.next();
                         int iDToCheckOut;
                         switch (avBksSelection) {
-                            case 1:
+                            case "1":
                                 // Ask for user's name
                                 System.out.println("What is your name? ");
                                 userName = scanner.next(); // For some reason scanner.nextLine() "skipped" this line and went to line 93.
@@ -100,7 +100,7 @@ public class Main {
                                         book.setCheckedOutTo(userName);
 
                                         ckdOutBook = book.getTitle();
-                                        System.out.println("You CHECKED OUT " + "\"" + ckdOutBook + "\""); // Prints book title that's been checked out
+                                        System.out.println("\nYou CHECKED OUT " + "\"" + ckdOutBook + "\""); // Prints book title that's been checked out
                                     }
                                     else {
                                         // Intentionally left blank
@@ -108,32 +108,31 @@ public class Main {
                                 }
 
                                 // Put this here so that it won't automatically go back to the Available Books menu after checking out.
-                                int exitNum;
+                                String exitString;
                                 do {
                                     System.out.println(
-                                            "Type 1 to Exit to Available Books menu\n"
+                                            "\nType 1 to Exit to Available Books menu\n"
                                                     + "Enter here: ");
-                                    exitNum = scanner.nextInt();
-                                    if (exitNum == 1) {
+                                    exitString = scanner.next();
+                                    if (exitString.equals("1")) {
                                         break;
                                     } else {
                                         System.out.println("\nERROR: Must type 1 to Exit.\n");
                                     }
-                                } while (exitNum != 1);
+                                } while (!exitString.equals("1"));
 
                                 System.out.println("Returning to Available Books Menu ...\n");
                                 break;
-                            case 2:
+                            case "2":
                                 System.out.println("Returning to Home Menu ...\n");
                                 break;
                             default:
-                                System.out.println("ERROR: type either 1 or 2.");
+                                System.out.println("\nERROR: type either 1 or 2.\n");
                                 break;
                         }
-                    } while (avBksSelection != 2);
+                    } while (!avBksSelection.equals("2"));
                     break;
-
-                case 2:
+                case "2":
 
                     String ckdOutBksSelection;
                     do {
@@ -162,11 +161,6 @@ public class Main {
                         System.out.println("\tType X to go BACK to Home menu\n");
                         System.out.println("Enter here: ");
                         ckdOutBksSelection = scanner.next();
-                            // Option: (C)heck-in book
-                                // Ask for book ID to check in
-                                    // Check-in book with ID
-                                        // Exit/return/go back to Home
-                            // Else Exit/go back
 
                         int iDToCheckIn;
                         // Using "toUpperCase()" so that any input will be upper-case; making the switch statement "ignore" the casing.
@@ -183,7 +177,7 @@ public class Main {
                                         book.setCheckedOutTo("");
 
                                         ckdInBook = book.getTitle();
-                                        System.out.println("You CHECKED IN " + "\"" + ckdInBook + "\""); // Prints book title that's been checked IN
+                                        System.out.println("\nYou CHECKED IN " + "\"" + ckdInBook + "\""); // Prints book title that's been checked IN
                                     }
                                     else {
                                         // Intentionally left blank
@@ -191,18 +185,18 @@ public class Main {
                                 }
 
                                 // Put this here so that it won't automatically go back to the Checked-Out Books menu after checking out.
-                                /*int exitNum;
+                                String exitString;
                                 do {
                                     System.out.println(
-                                            "Type 1 to Exit to Checked-Out Books menu\n"
+                                            "\nType 1 to Exit to Checked-Out Books menu\n"
                                                     + "Enter here: ");
-                                    exitNum = scanner.nextInt();
-                                    if (exitNum == 1) {
+                                    exitString = scanner.next();
+                                    if (exitString.equals("1")) {
                                         break;
                                     } else {
                                         System.out.println("\nERROR: Must type 1 to Exit.\n");
                                     }
-                                } while (exitNum != 1);*/
+                                } while (!exitString.equals("1"));
 
                                 System.out.println("Returning to Checked-Out Books Menu ...\n");
                                 break;
@@ -210,20 +204,20 @@ public class Main {
                                 System.out.println("Returning to Home Menu ...\n");
                                 break;
                             default:
-                                System.out.println("ERROR: type either C or X");
+                                System.out.println("\nERROR: type either C or X\n");
                                 break;
                         }
                     } while (!ckdOutBksSelection.equalsIgnoreCase("X"));
                     break;
-
-                case 3:
+                case "3":
                     break;
                 default:
-
+                    System.out.println("\nERROR: You must type either 1, 2, or 3.\n");
+                    break;
             }
 
 
-        } while (homeSelection != 3);
+        } while (!homeSelection.equals("3"));
 
 
 
