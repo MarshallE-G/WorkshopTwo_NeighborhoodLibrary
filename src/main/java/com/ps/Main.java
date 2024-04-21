@@ -1,7 +1,6 @@
 package com.ps;
 
-// BONUS 1: Move Do-whiles/Menu to their own separate classes.
-// BONUS 2: Maybe add an Error message once all books are checked out.
+// BONUS: Maybe add an Error message once all books are checked out.
     // Or display the number of books available & checked out.
 
 
@@ -42,9 +41,9 @@ public class Main {
             System.out.println("Welcome to THE Mars Hall Library!\n");
             System.out.println("Home Menu");
                 // Option: Show Available books
-            System.out.println("\tEnter 1 to for Available Books menu.");
+            System.out.println("\tEnter 1 for the Available Books menu.");
                 // Option: Show Checked Out books
-            System.out.println("\tEnter 2 to for Checked Out Books menu.");
+            System.out.println("\tEnter 2 for the Checked Out Books menu.");
                 // Else Exit
             System.out.println("\tEnter 3 to Exit.\n");
 
@@ -72,7 +71,7 @@ public class Main {
                             }
                         }
 
-                        System.out.println("\n# of Available books: " + numOfAvBooks + "\n");
+                        System.out.println("# of Available books: " + numOfAvBooks + "\n");
 
                         // Ask user if they want to check out book(s)
                         System.out.println("Would you like to CHECK OUT a book?");
@@ -90,7 +89,7 @@ public class Main {
                                 System.out.println("What is your name? ");
                                 userName = scanner.next(); // For some reason scanner.nextLine() "skipped" this line and went to line 93.
 
-                                System.out.println("Enter ID of the book you would like to CHECK OUT: ");
+                                System.out.println("Enter ID# of the book you would like to CHECK OUT: ");
                                 iDToCheckOut = scanner.nextInt(); // This only accepts ONE book to check out.
 
                                 String ckdOutBook; // Checked Out book title
@@ -152,7 +151,7 @@ public class Main {
                             }
                         }
 
-                        System.out.println("\n# of Checked-Out books: " + numOfCkdOutBooks + "\n");
+                        System.out.println("# of Checked-Out books: " + numOfCkdOutBooks + "\n");
 
                         System.out.println("Would you like to CHECK IN a book?");
                         // Option: If Yes:
@@ -215,8 +214,6 @@ public class Main {
                     System.out.println("\nERROR: You must type either 1, 2, or 3.\n");
                     break;
             }
-
-
         } while (!homeSelection.equals("3"));
 
     }
