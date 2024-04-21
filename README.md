@@ -2,9 +2,7 @@
 
 ## Screenshots of my code:
 ### My Home Screen
-![HomeScreen1.PNG](..%2F..%2F..%2FPictures%2FHomeScreen1.PNG)
-![HomeScreen2.PNG](..%2F..%2F..%2FPictures%2FHomeScreen2.PNG)
-![HomeMenu.PNG](..%2F..%2F..%2FPictures%2FHomeMenu.PNG)
+![](C:\Users\Student\Pictures\HomeScreen1.PNG)
 
 ### Available Books Menu
 ![AvailableBooks1.PNG](..%2F..%2F..%2FPictures%2FAvailableBooks1.PNG)
